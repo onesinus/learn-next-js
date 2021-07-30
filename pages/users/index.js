@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Users({ users }) {
     return (
@@ -10,16 +11,26 @@ export default function Users({ users }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <table>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                </tr>
-                {users.map(user => (
-                    <tr key={user.name}>
-                        <td>{user.id}</td>
-                        <td>{user.name}</td>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Action</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {users.map(user => (
+                        <tr key={user.name}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>
+                                <Link href={`/users/${user.id}?name=${user.name}`}>
+                                    <a>Detail User</a>
+                                </Link>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
     )
