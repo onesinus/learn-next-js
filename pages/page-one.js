@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function PageOne() {
-    localStorage.setItem("access-page", "Page 1 loo")
+    // localStorage.setItem("access-page", "Page 1 loo")
     return (
         <div className={styles.container}>
             <Head>
