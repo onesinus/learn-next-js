@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 
 import Menu from './common/menu'
 import Footer from './common/footer'
+import Coba from '../komponen/Coba'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Hello World!
         </h1>
+        <Coba />
         <Menu />
       </main>
       <Footer />

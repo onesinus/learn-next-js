@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function PageOne() {
-    // localStorage.setItem("access-page", "Page 1 loo")
+export default function PageOne(props) {
+    const onClickLogout = () => {
+        props.ls.removeItem('isLoggedIn')
+        window.location.href = '/'
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -11,7 +15,8 @@ export default function PageOne() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>        
             <div>
-                This is page one
+                This is page one<br/>
+                <button onClick={onClickLogout}>Logout</button>
             </div>
         </div>
     )
