@@ -40,7 +40,7 @@ export async function getStaticProps(context) {
     const res = await fetch(`http://localhost:3000/api/users`)
     const data = await res.json()
     
-    if (!data) {
+    if (!data.data) {
       return {
         users: []
       }
@@ -48,7 +48,7 @@ export async function getStaticProps(context) {
   
     return {
       props: {
-        users: data.data
+        users: data.data.default
       }
     }
   }

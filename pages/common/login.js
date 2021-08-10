@@ -1,7 +1,8 @@
 import { useState } from "react"
-import PageOne from '../page-one'
 
 export default function Login(props) {
+    // debugger
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -26,8 +27,7 @@ export default function Login(props) {
               .then(data => {
                   if (data.isAuthenticated) {
                     props.ls.setItem('isLoggedIn', true)
-                    // window.location.href = '/page-one'
-                    return <PageOne />
+                    window.location.href = '/'
                   } else {
                       alert("Invalid username or password")
                   }
